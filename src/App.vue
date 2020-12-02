@@ -1,20 +1,20 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <Scrollbar width="50px"
+             height="50px">
+    <img alt="Vue logo"
+         src="./assets/logo.png">
+  </Scrollbar>
 </template>
 
-<script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-import HelloWorld from './components/HelloWorld.vue';
+<script>
+import Scrollbar from './Scrollbar/Index.vue';
 
-@Options({
+export default {
   components: {
-    HelloWorld,
+    Scrollbar,
   },
-})
-export default class App extends Vue {}
+};
 </script>
-
 <style lang="less">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
