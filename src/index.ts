@@ -1,12 +1,10 @@
-import ScrollBar from './Scrollbar/Index.vue';
+import cScrollbar from './Scrollbar/Index.vue';
 
-const cScrollbar = {
+export default {
   install(app: any) {
-    app.component(ScrollBar.name, ScrollBar);
+    app.component(cScrollbar.name, cScrollbar);
     return app;
   },
 };
 
-export default cScrollbar;
-
-export const cScrollBar = ScrollBar;
+export { cScrollbar };
