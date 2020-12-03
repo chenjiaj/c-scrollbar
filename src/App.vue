@@ -1,6 +1,6 @@
 <template>
-  <Scrollbar width="50px"
-             height="50px">
+  <Scrollbar width="100px"
+             height="100px">
     <img alt="Vue logo"
          src="./assets/logo.png">
   </Scrollbar>
