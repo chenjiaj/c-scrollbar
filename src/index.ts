@@ -8,3 +8,5 @@ const cScrollbar = {
 };
 
 export default cScrollbar;
+
+export const cScrollBar = ScrollBar;

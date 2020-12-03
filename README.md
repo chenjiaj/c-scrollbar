@@ -1,4 +1,50 @@
-##### 一、属性
+##### 一、使用
+
+```
+npm install c-scrollbar --save // 下载依赖
+```
+
+全局注册
+main.ts
+```
+import { createApp } from 'vue';
+import cScrollbar from 'c-scrollbar';
+import App from './App.vue';
+
+createApp(App).use(cScrollbar).mount('#app';
+```
+
+局部引入
+import {cScrollbar} from 'c-scrollbar';
+export default{
+  components: {
+    cScrollbar,
+  },
+}
+```
+
+```
+App.vue
+```
+<template>
+  sdsd
+  <c-scrollbar width="100px"
+               height="40px">
+    <ul>
+      <li>serwerwerwerwer</li>
+      <li>serwerwerwerwer</li>
+      <li>serwerwerwerwer</li>
+      <li>serwerwerwerwer</li>
+      <li>serwerwerwerwer</li>
+      <li>serwerwerwerwer</li>
+      <li>serwerwerwerwer</li>
+    </ul>
+  </c-scrollbar>
+</template>
+```
+
+
+##### 二、属性
 
 | 属性 | 类型 | 默认值 | 说明 |
 | ---- | ---- | ---- | ---- |
@@ -11,13 +57,13 @@
 |vThumbStyle|Object|{'background-color': 'rgba(0, 0, 0, 0.2)'}| 垂直方向上滑块样式设置。修改垂直方向上滑块滑块的样式|
 |hThumbStyle|Object|{'background-color': 'rgba(0, 0, 0, 0.2)'}| 水平方向上滑块样式设置。修改水平方向上滑块滑块的样式|
 
-##### 二、事件
+##### 三、事件
 
 |事件名| 说明|
 | ---- | ---- |
 |scroll| 滚动时触发|
 
-##### 三、参考实例：
+##### 四、参考实例：
 
 ```
 <template>
@@ -73,7 +119,7 @@ export default {
   
 ```
 
-##### 四、实现核心思路
+##### 五、实现核心思路
 
 1. 通过MutationObserver、window.resize监听div元素内容或属性改变、监听窗口改变去更新滚动条滑块高度
 2. 通过::-webkit-scrollbar隐藏原生滚动条
