@@ -6,4 +6,5 @@ export default {
     app.component(cScrollbar.name, cScrollbar);
     return app;
   },
+  cScrollbar,
 };
