@@ -1,7 +1,8 @@
 {
   "name": "c-scrollbar",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "main": "dist/cScrollbar.common.js",
+  "typings": "types/index.d.ts",
   "keywords": [
     "plugin",
     "vue3"
