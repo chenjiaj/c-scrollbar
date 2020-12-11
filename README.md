@@ -128,6 +128,6 @@ export default {
 ##### 五、实现核心思路
 
 1. 通过MutationObserver、window.resize监听div元素内容或属性改变、监听窗口改变去更新滚动条滑块高度
-2. 通过::-webkit-scrollbar隐藏原生滚动条
+2. 通过::-webkit-scrollbar（谷歌、Edge）、 scrollbar-width: none;（火狐）隐藏原生滚动条
 3. 通过监听原生scroll事件去改变滑块的高度
 4. 点击轨道或拖动滑块时，监听mousedown事件去改变外层wrap的scrollTop或scrollLeft值。（改变此值会触发scroll事件）
