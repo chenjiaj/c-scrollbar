@@ -1,6 +1,6 @@
 {
   "name": "c-scrollbar",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "dist/cScrollbar.common.js",
   "typings": "types/index.d.ts",
   "keywords": [
@@ -17,6 +17,7 @@
     "url": "git@github.com:chenjiaj/c-scrollbar.git"
   },
   "dependencies": {
+    "c-scrollbar": "^0.1.1",
     "vue": "^3.0.0"
   },
   "devDependencies": {

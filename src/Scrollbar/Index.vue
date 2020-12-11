@@ -180,10 +180,14 @@ export default {
 }
 .c-scrollbar-wrap {
   height: 100%;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  scrollbar-width: none;
 
   &::-webkit-scrollbar {
     width: 0;
     height: 0;
+    display: none;
   }
 }
 </style>
