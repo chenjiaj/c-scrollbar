@@ -73,8 +73,6 @@ export default {
       hover: false,
     });
 
-    const wrap = computed(() => wrapRef.value);
-
     /**
      * 真实滚动条滚动时，修改滚动条bar移动距离
      */
@@ -111,6 +109,14 @@ export default {
       }
     }
 
+    function setScrollTop(value: number) {
+      wrapRef.value.scrollTop = value;
+    }
+
+    function setScrollLeft(value: number) {
+      wrapRef.value.scrollLeft = value;
+    }
+
     onMounted(() => {
       update(); // 初始化调用一次，计算滚动条默认高度
       addResizeListener(wrapRef.value, update); // 监听元素变化，如果容器DOM变化触发更新
@@ -124,9 +130,10 @@ export default {
       ...toRefs(state),
       wrapRef,
       handleScroll,
-      wrap,
       hasVBar,
       hasHBar,
+      setScrollTop,
+      setScrollLeft,
     };
   },
 };

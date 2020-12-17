@@ -1,6 +1,6 @@
 {
   "name": "c-scrollbar",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "dist/cScrollbar.common.js",
   "typings": "types/index.d.ts",
   "keywords": [

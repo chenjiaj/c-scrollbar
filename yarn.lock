@@ -2317,7 +2317,7 @@ bytes@3.1.0:
 
 c-scrollbar@^0.1.1:
   version "0.1.1"
-  resolved "https://registry.npm.taobao.org/c-scrollbar/download/c-scrollbar-0.1.1.tgz?cache=0&sync_timestamp=1607053739916&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fc-scrollbar%2Fdownload%2Fc-scrollbar-0.1.1.tgz#dc965f03be32d9d3ab11dc3d88ca6eb36b81f341"
+  resolved "https://registry.npm.taobao.org/c-scrollbar/download/c-scrollbar-0.1.1.tgz#dc965f03be32d9d3ab11dc3d88ca6eb36b81f341"
   integrity sha1-3JZfA74y2dOrEdw9iMpus2uB80E=
   dependencies:
     vue "^3.0.0"
