@@ -1,5 +1,7 @@
 最近开始尝试vue3开发项目，用了ant-desigin-vue框架，但是发现没有滚动条组件，因此自己尝试着写了一个，有需要的可以使用，有什么问题可以给我提issue。
 
+地址：https://github.com/chenjiaj/c-scrollbar
+
 ### 基于vue3的滚动条组件
 
 ##### 一、使用
