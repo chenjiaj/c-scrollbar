@@ -2,6 +2,8 @@
 
 地址：https://github.com/chenjiaj/c-scrollbar
 
+查看效果：https://chenjiaj.github.io/c-scrollbar/
+
 ### 基于vue3的滚动条组件
 
 ##### 一、使用

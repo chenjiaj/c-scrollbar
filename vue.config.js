@@ -4,7 +4,7 @@ module.exports = {
   },
 
   lintOnSave: false,
-
+  publicPath: './',
   transpileDependencies: ['webrtc-adapter'],
   configureWebpack: {
     output: {
