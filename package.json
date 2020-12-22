@@ -1,5 +1,5 @@
 {
-  "name": "c-scrollbar1",
+  "name": "c-scrollbar",
   "version": "0.1.5",
   "main": "dist/cScrollbar.common.js",
   "typings": "types/index.d.ts",
@@ -31,7 +31,6 @@
     "@vue/compiler-sfc": "^3.0.0",
     "@vue/eslint-config-airbnb": "^5.0.2",
     "@vue/eslint-config-typescript": "^5.0.2",
-    "c-scrollbar": "^0.1.4",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-vue": "^7.0.0-0",
