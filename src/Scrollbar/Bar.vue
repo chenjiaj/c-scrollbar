@@ -66,7 +66,7 @@ export default {
       const wrap = instance.ctx.$el.getBoundingClientRect()[bar.value.direction]; // 滚动轨道距顶部或最左边的位置
       const offset = Math.abs(wrap - client); // 距离元素上或左边距的距离
       const thumbHalf = thumbRef.value[bar.value.offset] / 2; // thumb一般的高度
-      const $parentWrap = instance.parent.ctx.wrap;
+      const $parentWrap = instance.parent.ctx.wrapRef;
       const thumbPosPercent = ((offset - thumbHalf) * 100) / instance.ctx.$el[bar.value.offset];
       $parentWrap[bar.value.scroll] = (thumbPosPercent * $parentWrap[bar.value.scrollSize]) / 100;
     }
@@ -84,7 +84,7 @@ export default {
       const wrap = instance.ctx.$el.getBoundingClientRect()[bar.value.direction]; // 滚动轨道距顶部或最左边的位置
       const offset = Math.abs(wrap - client); // 距离元素上或左边距的距离
       const thumbHalf = thumbRef.value[bar.value.offset] / 2; // thumb一般的高度
-      const $parentWrap = instance.parent.ctx.wrap;
+      const $parentWrap = instance.parent.ctx.wrapRef;
       const thumbPosPercent = ((offset - thumbHalf) * 100) / instance.ctx.$el[bar.value.offset];
       $parentWrap[bar.value.scroll] = (thumbPosPercent * $parentWrap[bar.value.scrollSize]) / 100;
     }
