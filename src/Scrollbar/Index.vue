@@ -10,6 +10,7 @@
       </div>
 
       <Bar direction="vertical"
+           :parentRef="wrapRef"
            :size="vThumbHeight"
            :move="moveY"
            :barStyle="vBarStyle"
@@ -19,6 +20,7 @@
            v-if="direction !== 'x'"></Bar>
 
       <Bar direction="horizontal"
+           :parentRef="wrapRef"
            :size="hThumbWidth"
            :move="moveX"
            :barStyle="hBarStyle"
@@ -32,7 +34,7 @@
 </template>
 
 <script lang="ts">
-import { computed, onMounted, onUnmounted, reactive, ref, toRefs } from 'vue';
+import { onMounted, onUnmounted, reactive, ref, toRefs } from 'vue';
 import Bar from './Bar.vue';
 import { addResizeListener, removeResizeListener } from './resize-event';
 

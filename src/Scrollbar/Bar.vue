@@ -1,7 +1,8 @@
 <template>
   <div :class="`c-scrollbar-bar c-scrollbar-${direction}`"
        @mousedown="handleBarMouseDown"
-       :style="barStyle">
+       :style="barStyle"
+       ref="barRef">
     <div class="c-scrollbar-thumb"
          ref="thumbRef"
          @mousedown="handleThumbMouseDown"
@@ -10,13 +11,16 @@
 </template>
 
 <script lang="ts">
-import { computed, ComputedRef, getCurrentInstance, ref } from 'vue';
+import { computed, ComputedRef, ref } from 'vue';
 import { BAR_MAP } from './utils';
 import { BarMap, BarMapItem } from './index.d';
 
 export default {
   name: 'c-scrollbar-bar',
   props: {
+    parentRef: {
+      required: true,
+    },
     direction: {
       type: String,
       default: 'vertical', // 支出2个值 水平 horizontal 垂直 vertical
@@ -48,6 +52,7 @@ export default {
     },
   },
   setup(props: any) {
+    const barRef = ref();
     const bar: ComputedRef<BarMapItem> = computed(() => (BAR_MAP as BarMap)[props.direction]);
     const thumbStyleObj = computed(() => ({
       ...props.thumbStyle,
@@ -55,19 +60,19 @@ export default {
       transform: `translate${bar.value.axis}(${props.move})`,
     }));
 
-    const instance: any = getCurrentInstance();
-
     /**
      * 点击轨道 滚动区域滚动到对应的位置 定位到滑块的中心点
      */
     const thumbRef = ref();
     function handleBarMouseDown(e: any) {
       const client = e[bar.value.client]; // 点击位置距客户端顶部或最左边的位置
-      const wrap = instance.ctx.$el.getBoundingClientRect()[bar.value.direction]; // 滚动轨道距顶部或最左边的位置
+      const wrap = barRef.value.getBoundingClientRect()[bar.value.direction]; // 滚动轨道距顶部或最左边的位置
       const offset = Math.abs(wrap - client); // 距离元素上或左边距的距离
       const thumbHalf = thumbRef.value[bar.value.offset] / 2; // thumb一般的高度
-      const $parentWrap = instance.parent.ctx.wrapRef;
-      const thumbPosPercent = ((offset - thumbHalf) * 100) / instance.ctx.$el[bar.value.offset];
+      const $parentWrap = props.parentRef;
+      console.log('$parentWrap', $parentWrap);
+
+      const thumbPosPercent = ((offset - thumbHalf) * 100) / barRef.value[bar.value.offset];
       $parentWrap[bar.value.scroll] = (thumbPosPercent * $parentWrap[bar.value.scrollSize]) / 100;
     }
 
@@ -81,11 +86,12 @@ export default {
         return;
       }
       const client = e[bar.value.client]; // 点击位置距客户端顶部或最左边的位置
-      const wrap = instance.ctx.$el.getBoundingClientRect()[bar.value.direction]; // 滚动轨道距顶部或最左边的位置
+      const wrap = barRef.value.getBoundingClientRect()[bar.value.direction]; // 滚动轨道距顶部或最左边的位置
       const offset = Math.abs(wrap - client); // 距离元素上或左边距的距离
       const thumbHalf = thumbRef.value[bar.value.offset] / 2; // thumb一般的高度
-      const $parentWrap = instance.parent.ctx.wrapRef;
-      const thumbPosPercent = ((offset - thumbHalf) * 100) / instance.ctx.$el[bar.value.offset];
+      const $parentWrap = props.parentRef;
+      console.log('$parentWrap', $parentWrap);
+      const thumbPosPercent = ((offset - thumbHalf) * 100) / barRef.value[bar.value.offset];
       $parentWrap[bar.value.scroll] = (thumbPosPercent * $parentWrap[bar.value.scrollSize]) / 100;
     }
 
@@ -121,6 +127,7 @@ export default {
     }
 
     return {
+      barRef,
       thumbRef,
       bar,
       thumbStyleObj,
