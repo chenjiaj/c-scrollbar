@@ -19,11 +19,7 @@ import { createApp } from 'vue';
 import CScrollbar from 'c-scrollbar';
 import App from './App.vue';
 
-<<<<<<< HEAD
-createApp(App).use(CScrollbar).mount('#app';
-=======
 createApp(App).use(cScrollbar).mount('#app');
->>>>>>> 9d57efe420326cf586260545453c018d842db86c
 ```
 
 局部引入
