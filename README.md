@@ -1,4 +1,4 @@
-最近开始尝试vue3开发项目，用了ant-desigin-vue框架，但是发现没有滚动条组件，因此自己尝试着写了一个，有需要的可以使用，有什么问题可以给我提issue。
+基于vue3的滚动条组件
 
 地址：https://github.com/chenjiaj/c-scrollbar
 
@@ -16,19 +16,19 @@ npm install c-scrollbar --save // 下载依赖
 
 ```
 import { createApp } from 'vue';
-import cScrollbar from 'c-scrollbar';
+import CScrollbar from 'c-scrollbar';
 import App from './App.vue';
 
-createApp(App).use(cScrollbar).mount('#app';
+createApp(App).use(CScrollbar).mount('#app';
 ```
 
 局部引入
 
 ```
-import {cScrollbar} from 'c-scrollbar';
+import {CScrollbar} from 'c-scrollbar';
 export default{
   components: {
-    cScrollbar,
+    CScrollbar,
   },
 }
 ```
@@ -84,7 +84,7 @@ App.vue
 
 ```
 <template>
-  <cScrollbar width="300px"
+  <c-scrollbar width="300px"
              height="100px"
              trigger="hover"
              direction="all"
@@ -118,7 +118,7 @@ App.vue
       <li>1121212</li>
       <li>1121212</li>
     </ol>
-  </cScrollbar>
+  </c-scrollbar>
 </template>
 
 <script lang="ts">

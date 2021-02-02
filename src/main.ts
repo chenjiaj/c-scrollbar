@@ -1,8 +1,8 @@
 import { createApp } from 'vue';
-import cScrollbar from './index';
+import CScrollbar from './index';
 import App from './App.vue';
 
-createApp(App).use(cScrollbar).mount('#app');
+createApp(App).use(CScrollbar).mount('#app');
 
 // import { createApp } from 'vue';
 // import App from './App.vue';
