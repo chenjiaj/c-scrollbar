@@ -143,7 +143,7 @@ export default {
 
 <style lang="less">
 .c-scrollbar {
-  widows: 100%;
+  width: 100%;
   height: 100%;
   position: relative;
   overflow: hidden;
