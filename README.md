@@ -185,11 +185,11 @@ export default {
 
 <script lang="ts">
 import { onMounted, ref } from 'vue';
-import {cScrollbar} from 'c-scrollbar';
+import {CScrollbar} from 'c-scrollbar';
 
 export default {
   components: {
-    cScrollbar,
+    CScrollbar,
   },
   setup() {
     const scrollbarRef = ref();
