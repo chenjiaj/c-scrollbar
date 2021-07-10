@@ -38,6 +38,3 @@ export const BAR_MAP: BarMap = {
     direction: 'left',
   },
 };
-
-export const a = {
-};
