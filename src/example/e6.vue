@@ -1,6 +1,6 @@
 <template>
 
-  <h1 style="margin-top:50px">仅横向滚动，纵向超出因此</h1>
+  <h1 style="margin-top:50px">仅横向滚动，纵向超出隐藏</h1>
   <c-scrollbar width="500px"
                height="100px"
                direction="x"
