@@ -1,8 +1,9 @@
 <template>
   <div :class="`c-scrollbar c-scrollbar-${trigger}`"
-       :style="{width,height}">
+       :style="{width,height,'max-height':maxHeight,'max-width':maxWidth}">
     <div :class="{'c-scrollbar-wrap':true,[`c-scrollbar-wrap-${direction}`]:true}"
          ref="wrapRef"
+         :style="{'max-height':maxHeight,'max-width':maxWidth}"
          @scroll="handleScroll">
 
       <div class="c-scrollbar-content">
@@ -46,16 +47,25 @@ export default {
   props: {
     width: {
       type: String,
-      default: '100%',
+      default: '',
     },
     height: {
       type: String,
+      default: '',
+    },
+    maxHeight: {
+      type: String,
       default: '100px',
+    },
+    maxWidth: {
+      type: String,
+      default: '',
     },
     trigger: {
       type: String,
       default: 'always', // hover 鼠标移动上去显示 always 一直显示 none 不显示
     },
+    noresize: Boolean, // 如果 container 尺寸不会发生变化，最好设置它可以优化性能
     direction: {
       type: String,
       default: 'all', // all 横向 纵向 都出现滚动条 x 水平 y 垂直
@@ -121,11 +131,15 @@ export default {
 
     onMounted(() => {
       update(); // 初始化调用一次，计算滚动条默认高度
-      addResizeListener(wrapRef.value, update); // 监听元素变化，如果容器DOM变化触发更新
+      if (!props.noresize) {
+        addResizeListener(wrapRef.value, update); // 监听元素变化，如果容器DOM变化触发更新
+      }
     });
 
     onUnmounted(() => {
-      removeResizeListener(wrapRef.value, update);
+      if (!props.noresize) {
+        removeResizeListener(wrapRef.value, update);
+      }
     });
 
     return {
@@ -171,7 +185,7 @@ export default {
 
   &.c-scrollbar-none {
     .c-scrollbar-bar {
-      opacity: 1;
+      opacity: 0;
     }
   }
 }

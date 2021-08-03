@@ -58,14 +58,18 @@ App.vue
 
 | 属性 | 类型 | 默认值 | 说明 |
 | ---- | ---- | ---- | ---- |
-| height | String | '100px' | 垂直方向，内容超过此高度出现滚动条。最好不要使用百分比，除非父级元素设置了具体高度 |
-| width | String | '100%'| 水平方向 ，内容超过此高度出现滚动条 。 | 
+| maxHeight | String | '100px'| 垂直方向 ，内容超过此高度出现滚动条。 | 
+| maxWidth | String | ''| 水平方向 ，内容超过此高度出现滚动条 。 | 
+| height | String | '' | 垂直方向，内容超过此高度出现滚动条。最好不要使用百分比，除非父级元素设置了具体高度 |
+| width | String | ''| 水平方向 ，内容超过此高度出现滚动条 。 | 
 | trigger | String | 'always' | 触发显示滚动条。可填写的值有 'always'、'hover'、'none'。'always' 一直显示 ，'hover' 鼠标移动上去显示 ， 'none' 不显示|
 |direction|String|'all'| 可滚动的方向。可填写的值有'all'、'x'、'y'。'all'垂直水平方向都可以滚动，'x'只可以在横向滚动，'y'只可以在垂直方向上滚动。|
 |vBarStyle|Object|{'background-color': ''}| 垂直方向上轨道样式设置。修改垂直方向上轨道的样式|
 |hBarStyle|Object|{'background-color': ''}| 水平方向上轨道样式设置。修改水平方向上轨道的样式|
 |vThumbStyle|Object|{'background-color': 'rgba(0, 0, 0, 0.2)'}| 垂直方向上滑块样式设置。修改垂直方向上滑块滑块的样式|
 |hThumbStyle|Object|{'background-color': 'rgba(0, 0, 0, 0.2)'}| 水平方向上滑块样式设置。修改水平方向上滑块滑块的样式|
+
+注：同时设置maxHeight、height或maxWidth、width，以较小者生效
 
 ##### 三、方法
 
@@ -205,6 +209,8 @@ export default {
 </script>
 
 ```
+
+更多例子：参考src文件夹中example中的.vue文件
 
 ##### 六、实现核心思路
 
