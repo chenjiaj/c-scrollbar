@@ -58,7 +58,7 @@ App.vue
 
 | 属性 | 类型 | 默认值 | 说明 |
 | ---- | ---- | ---- | ---- |
-| maxHeight | String | '100px'| 垂直方向 ，内容超过此高度出现滚动条。maxHeight、height必须设置一个，否者不生效 | 
+| maxHeight | String | ''| 垂直方向 ，内容超过此高度出现滚动条。maxHeight、height必须设置一个，否者不生效 | 
 | maxWidth | String | ''| 水平方向 ，内容超过此高度出现滚动条 。 | 
 | height | String | '' | 垂直方向，内容超过此高度出现滚动条。最好不要使用百分比，除非父级元素设置了具体高度。maxHeight、height必须设置一个，否者不生效 |
 | width | String | ''| 水平方向 ，内容超过此高度出现滚动条 。 | 
