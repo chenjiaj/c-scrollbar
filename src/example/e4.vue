@@ -2,7 +2,7 @@
 
   <h1 style="margin-top:50px">一直显示滚动条</h1>
   <c-scrollbar width="500px"
-               height="100px"
+               height="200px"
                direction="all"
                :vBarStyle="{
                'background-color':'rgba(0,0,0,0.1)'
