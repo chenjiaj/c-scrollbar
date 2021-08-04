@@ -69,7 +69,7 @@ App.vue
 |vThumbStyle|Object|{'background-color': 'rgba(0, 0, 0, 0.2)'}| 垂直方向上滑块样式设置。修改垂直方向上滑块滑块的样式|
 |hThumbStyle|Object|{'background-color': 'rgba(0, 0, 0, 0.2)'}| 水平方向上滑块样式设置。修改水平方向上滑块滑块的样式|
 
-注：同时设置maxHeight、height或maxWidth、width，以较小者生效
+注：同时设置maxHeight、height或maxWidth、width，以较小者生效,尽量避免同事设置
 
 ##### 三、方法
 
