@@ -70,8 +70,6 @@ export default {
       const offset = Math.abs(wrap - client); // 距离元素上或左边距的距离
       const thumbHalf = thumbRef.value[bar.value.offset] / 2; // thumb一般的高度
       const $parentWrap = props.parentRef;
-      console.log('$parentWrap', $parentWrap);
-
       const thumbPosPercent = ((offset - thumbHalf) * 100) / barRef.value[bar.value.offset];
       $parentWrap[bar.value.scroll] = (thumbPosPercent * $parentWrap[bar.value.scrollSize]) / 100;
     }
@@ -90,7 +88,6 @@ export default {
       const offset = Math.abs(wrap - client); // 距离元素上或左边距的距离
       const thumbHalf = thumbRef.value[bar.value.offset] / 2; // thumb一般的高度
       const $parentWrap = props.parentRef;
-      console.log('$parentWrap', $parentWrap);
       const thumbPosPercent = ((offset - thumbHalf) * 100) / barRef.value[bar.value.offset];
       $parentWrap[bar.value.scroll] = (thumbPosPercent * $parentWrap[bar.value.scrollSize]) / 100;
     }

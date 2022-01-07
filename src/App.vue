@@ -24,8 +24,6 @@ export default {
     ...components,
   },
   setup() {
-    console.log(components);
-
     return {
       components,
     };
